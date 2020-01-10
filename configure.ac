@@ -445,11 +445,11 @@ AC_CHECK_LIB([udev], [udev_device_new_from_device_id], [
   LIBS="$LIBS $LIBUDEV_LIBS"
 ])
 
-dnl Ubuntu's systemd pkg-config seems broken beyond repair. So:
+dnl xxxxUbuntu's systemd pkg-config seems broken beyond repair. So:
 kernelversion=`cat /proc/version || echo "non-linux"`
 AS_CASE([$kernelversion],
-  [*Ubuntu*],[
-    AC_MSG_NOTICE([Hardwiring Ubuntu systemd setup])
+  [*xxxxUbuntu*],[
+    AC_MSG_NOTICE([Hardwiring xxxxUbuntu systemd setup])
     AC_SUBST([systemdsystemunitdir], [/lib/systemd/system])
     AM_CONDITIONAL([WITH_SYSTEMDSYSTEMUNITDIR], [true])
   ],[*],[
